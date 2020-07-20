@@ -1,0 +1,244 @@
+body {
+    position: relative;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.site-header {
+    background-color: rgba(0, 50, 100, 0.85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+
+.site-header a {
+    color: #bbb;
+    transition: ease-in-out color .15s;
+}
+
+.site-header a.active {
+    color: #fff;
+}
+
+.site-header a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.site-footer {
+    background-color: rgba(0, 50, 100, 0.06);
+}
+
+.contact .name { font-weight: 600; }
+.contact .position { font-size: 10pt; }
+.contact .instution { }
+.contact .email { }
+
+h2 {
+    margin-top: -60px;
+    padding-top: 60px;
+}
+
+.pubs, .patents {
+    padding-left: 0;
+    list-style: none;
+}
+
+.pubs li, .patents li {
+    display: block;
+    padding: 8pt 0;
+}
+
+.pubs .title {
+    font-weight: bold;
+}
+
+.conference, .journal {
+    font-style: italic;
+}
+
+.pubs .links a::before {
+    content: "(";
+}
+
+.pubs .links a::after {
+    content: ")";
+}
+
+.author a {
+    color: #2a6496;
+}
+
+.author a:hover {
+    color: #428bca;
+}
+
+
+@media (min-width: 768px) {
+    .bd-sidebar {
+        position: sticky;
+        z-index: 1000;
+        top: 4rem;
+        left: 0;
+        overflow-x: hidden;
+        height: calc(100vh - 4rem);        
+    }
+}
+
+@media (min-width: 480px) {
+
+    .pubs li {
+	padding: 8px 0 8px 88px;
+	min-height: 80px;
+	background-repeat: no-repeat;
+	background-position: 0px 50%;
+	background-size: 80px 80px;
+    }
+
+    .tro2013 {
+	background-image: url(thumb/TRO2013.png);
+    }
+
+    .iros2012 {
+	background-image: url(thumb/IROS2012.png);
+    }
+
+    .icra2014 {
+	background-image: url(thumb/ICRA2014.png);
+	background-size: 80px 46px !important;
+    }
+
+    .wafr2014 {
+	background-image: url(thumb/WAFR2014.png);
+    }
+
+    .wafr2016 {
+	background-image: url(thumb/cloud.png);
+    }
+
+    .isrr2017 {
+	background-image: url(thumb/ISRR2017.jpg);
+    }
+
+    .wafr2018 {
+        background-image: url(thumb/WAFR2018.svg);
+    }
+
+    .icra2019 {
+        background-image: url(thumb/ICRA2019.svg);
+        background-size: 80px 57px !important;
+    }
+
+    .wang2019adversarial {
+        background-image: url(thumb/wang2019.png);
+    }
+
+    .zhang2020dexnetar {
+        background-image: url(thumb/zhang2020.png);
+    }
+
+    .xu2020minimal {
+        background-image: url(thumb/xu2020.png);
+    }
+
+    .ichnowski2020fog {
+        background-image: url(thumb/ichnowski2020fog.png);
+    }
+
+    .ichnowski2020gomp {
+        background-image: url(thumb/ichnowski2020gomp.png);
+    }
+
+    .hwang2020calibrating {
+        background-image: url(thumb/hwang2020calibrating.png);
+    }
+
+    .seita2020deep {
+        background-image: url(thumb/seita2020deep.png);
+    }
+
+    .devgon2020orienting {
+        background-image: url(thumb/devgon2020orienting.png);
+    }
+
+    .song2020robust {
+        background-image: url(thumb/song2020robust.png);
+    }
+    
+    .schenney-tilt {
+	background-image: url(thumb/tilt-small.png);
+	background-size: 80px 74.8px !important;
+    }
+
+    .schenney-vrml {
+	background-image: url(thumb/vrml-small.png);
+	background-size: 80px 50px !important;
+    }
+
+    @media only screen and (min--moz-device-pixel-ratio: 2),
+           only screen and (-o-min-device-pixel-ratio: 2/1),
+           only screen and (-webkit-min-device-pixel-ratio: 2),
+           only screen and (min-device-pixel-ratio: 2) {
+
+        .tro2013 {
+	    background-image: url(thumb/TRO2013@2x.png);
+	}
+
+	.iros2012 {
+	    background-image: url(thumb/IROS2012@2x.png);
+	}
+
+	.icra2014 {
+	    background-image: url(thumb/ICRA2014@2x.png);
+	}
+
+	.wafr2014 {
+	    background-image: url(thumb/WAFR2014@2x.png);
+	}
+
+	.wafr2016 {
+	    background-image: url(thumb/cloud@2x.png);
+	}
+
+	.isrr2017 {
+	    background-image: url(thumb/ISRR2017@2x.jpg);
+	}
+
+        .wang2019adversarial {
+            background-image: url(thumb/wang2019@2x.png);
+        }
+        
+        .zhang2020dexnetar {
+            background-image: url(thumb/zhang2020@2x.png);
+        }
+
+        .xu2020minimal {
+            background-image: url(thumb/xu2020@2x.png);
+        }
+        
+        .ichnowski2020fog {
+            background-image: url(thumb/ichnowski2020fog@2x.png);
+        }
+
+        .ichnowski2020gomp {
+            background-image: url(thumb/ichnowski2020gomp@2x.png);
+        }
+        
+        .hwang2020calibrating {
+            background-image: url(thumb/hwang2020calibrating@2x.png);
+        }
+
+        .seita2020deep {
+            background-image: url(thumb/seita2020deep@2x.png);
+        }
+
+        .devgon2020orienting {
+            background-image: url(thumb/devgon2020orienting@2x.png);
+        }
+
+        .song2020robust {
+            background-image: url(thumb/song2020robust@2x.png);
+        }
+    }
+}

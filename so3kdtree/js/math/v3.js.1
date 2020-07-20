@@ -1,0 +1,88 @@
+define(["./makevec"], function(makevec) {
+    var v3 = makevec(3);
+
+    v3.cross = function(r, a, b) {
+        var ax = a[0],
+            ay = a[1],
+            az = a[2],
+            bx = b[0],
+            by = b[1],
+            bz = b[2];
+
+        r[0] = ay * bz - az * by;
+        r[1] = az * bx - ax * bz;
+        r[2] = ax * by - ay * bx;
+    };
+
+    v3.randomUnit = function(r, rnd) {
+        if (!rnd) {
+            rnd = Math.random;
+        }
+
+        var z = 2 * rnd() - 1;
+        var t = 2 * Math.PI * rnd();
+        var s = Math.sqrt(1 - z*z);
+
+        r[0] = s * Math.cos(t);
+        r[1] = s * Math.sin(t);
+        r[2] = z;
+    };
+
+    v3.m4transform = function(r, m, a) {
+        var ax = a[0],
+            ay = a[1],
+            az = a[2],
+            // For a homogenous transform we assume: aw = 1
+
+            // iw = 1/r[3]
+            iw = 1 / (m[3] * ax + m[7] * ay + m[11] * az + m[15]);
+
+        r[0] = (m[0] * ax + m[4] * ay + m[ 8] * az + m[12]) * iw;
+        r[1] = (m[1] * ax + m[5] * ay + m[ 9] * az + m[13]) * iw;
+        r[2] = (m[2] * ax + m[6] * ay + m[10] * az + m[14]) * iw;
+    };
+
+    /**
+     * Same computation as m4transform, but instead of populating a
+     * result vector, only returns the transformed Z coordinate.
+     * Useful for depth sorting.
+     */
+    v3.m4transformZ = function(m, a) {
+        var ax = a[0],
+            ay = a[1],
+            az = a[2],
+            iw = (m[3] * ax + m[7] * ay + m[11] * az + m[15]);
+        return (m[2] * ax + m[6] * ay + m[10] * az + m[14]) / iw;        
+    };
+
+    v3.m3transform = function(r, m, a) {
+        var ax = a[0],
+            ay = a[1],
+            az = a[2];
+
+        r[0] = m[0] * x + m[3] * y + m[6] * z;
+        r[1] = m[1] * x + m[4] * y + m[7] * z;
+        r[2] = m[2] * x + m[5] * y + m[8] * z;
+    };
+
+    v3.q4transform = function(r, q, a) {
+         var ax = a[0],
+             ay = a[1],
+             az = a[2],
+             qx = q[0],
+             qy = q[1],
+             qz = q[2],
+             qw = q[3],
+
+             ix = qw * ax + qy * az - qz * ay,
+             iy = qw * ay + qz * ax - qx * az,
+             iz = qw * az + qx * ay - qy * ax,
+             iw = qx * ax + qy * ay + qz * az;
+
+        r[0] = ix * qw + iw * qx - iy * qz + iz * qy;
+        r[1] = iy * qw + iw * qy - iz * qx + ix * qz;
+        r[2] = iz * qw + iw * qz - ix * qy + iy * qx;
+    };
+
+    return v3;
+});

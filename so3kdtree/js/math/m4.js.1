@@ -1,0 +1,491 @@
+define(function() {
+    return {
+        copy : function (r,a) {
+            r[0] = a[0];
+            r[1] = a[1];
+            r[2] = a[2];
+            r[3] = a[3];
+            r[4] = a[4];
+            r[5] = a[5];
+            r[6] = a[6];
+            r[7] = a[7];
+            r[8] = a[8];
+            r[9] = a[9];
+            r[10] = a[10];
+            r[11] = a[11];
+            r[12] = a[12];
+            r[13] = a[13];
+            r[14] = a[14];
+            r[15] = a[15];
+            return r;
+        },
+        identity : function (r) {
+            r[0] = 1;
+            r[1] = 0;
+            r[2] = 0;
+            r[3] = 0;
+            r[4] = 0;
+            r[5] = 1;
+            r[6] = 0;
+            r[7] = 0;
+            r[8] = 0;
+            r[9] = 0;
+            r[10] = 1;
+            r[11] = 0;
+            r[12] = 0;
+            r[13] = 0;
+            r[14] = 0;
+            r[15] = 1;
+            return r;
+        },
+        transpose : function (r,a) {
+            if (r === a) {
+                var t = r[1];r[1] = r[4];r[4] = t;
+                t = r[2];r[2] = r[8];r[8] = t;
+                t = r[3];r[3] = r[12];r[12] = t;
+                t = r[6];r[6] = r[9];r[9] = t;
+                t = r[7];r[7] = r[13];r[13] = t;
+                t = r[11];r[11] = r[14];r[14] = t;
+            } else {
+                r[0] = a[0];
+                r[1] = a[4];
+                r[2] = a[8];
+                r[3] = a[12];
+                r[4] = a[1];
+                r[5] = a[5];
+                r[6] = a[9];
+                r[7] = a[13];
+                r[8] = a[2];
+                r[9] = a[6];
+                r[10] = a[10];
+                r[11] = a[14];
+                r[12] = a[3];
+                r[13] = a[7];
+                r[14] = a[11];
+                r[15] = a[15];
+            }
+            return r;
+        },
+        mul : function (r,a,b) {
+            var a00 = a[0],
+                a01 = a[1],
+                a02 = a[2],
+                a03 = a[3],
+                a10 = a[4],
+                a11 = a[5],
+                a12 = a[6],
+                a13 = a[7],
+                a20 = a[8],
+                a21 = a[9],
+                a22 = a[10],
+                a23 = a[11],
+                a30 = a[12],
+                a31 = a[13],
+                a32 = a[14],
+                a33 = a[15],
+                b0 = b[0],
+                b1 = b[1],
+                b2 = b[2],
+                b3 = b[3];
+            r[0] = b0*a00+b1*a10+b2*a20+b3*a30;
+            r[1] = b0*a01+b1*a11+b2*a21+b3*a31;
+            r[2] = b0*a02+b1*a12+b2*a22+b3*a32;
+            r[3] = b0*a03+b1*a13+b2*a23+b3*a33;
+            b0 = b[4];
+            b1 = b[5];
+            b2 = b[6];
+            b3 = b[7];
+            r[4] = b0*a00+b1*a10+b2*a20+b3*a30;
+            r[5] = b0*a01+b1*a11+b2*a21+b3*a31;
+            r[6] = b0*a02+b1*a12+b2*a22+b3*a32;
+            r[7] = b0*a03+b1*a13+b2*a23+b3*a33;
+            b0 = b[8];
+            b1 = b[9];
+            b2 = b[10];
+            b3 = b[11];
+            r[8] = b0*a00+b1*a10+b2*a20+b3*a30;
+            r[9] = b0*a01+b1*a11+b2*a21+b3*a31;
+            r[10] = b0*a02+b1*a12+b2*a22+b3*a32;
+            r[11] = b0*a03+b1*a13+b2*a23+b3*a33;
+            b0 = b[12];
+            b1 = b[13];
+            b2 = b[14];
+            b3 = b[15];
+            r[12] = b0*a00+b1*a10+b2*a20+b3*a30;
+            r[13] = b0*a01+b1*a11+b2*a21+b3*a31;
+            r[14] = b0*a02+b1*a12+b2*a22+b3*a32;
+            r[15] = b0*a03+b1*a13+b2*a23+b3*a33;
+            return r;
+        },
+        translate : function (r,a,x,y,z) {
+            if('undefined' === typeof y) {
+                z = x[2];
+                y = x[1];
+                x = x[0];
+            }
+            if (r === a) {
+                r[12] += a[0]*x+a[4]*y+a[8]*z;
+                r[13] += a[1]*x+a[5]*y+a[9]*z;
+                r[14] += a[2]*x+a[6]*y+a[10]*z;
+                r[15] += a[3]*x+a[7]*y+a[11]*z;
+            } else {
+                r[12] = (r[0] = a[0])*x+(r[4] = a[4])*y+(r[8] = a[8])*z+a[12];
+                r[13] = (r[1] = a[1])*x+(r[5] = a[5])*y+(r[9] = a[9])*z+a[13];
+                r[14] = (r[2] = a[2])*x+(r[6] = a[6])*y+(r[10] = a[10])*z+a[14];
+                r[15] = (r[3] = a[3])*x+(r[7] = a[7])*y+(r[11] = a[11])*z+a[15];
+            }
+            return r;
+        },
+        scale : function (r,a,x,y,z) {
+            if('undefined' === typeof y) {
+                if ('number' === typeof x) {
+                    y = z = x;
+                } else {
+                    z = x[2];
+                    y = x[1];
+                    x = x[0];
+                }
+            }
+            if (r === a) {
+                r[0] *= x;
+                r[1] *= x;
+                r[2] *= x;
+                r[3] *= x;
+                r[4] *= y;
+                r[5] *= y;
+                r[6] *= y;
+                r[7] *= y;
+                r[8] *= z;
+                r[9] *= z;
+                r[10] *= z;
+                r[11] *= z;
+            } else {
+                r[0] = a[0] * x;
+                r[1] = a[1] * x;
+                r[2] = a[2] * x;
+                r[3] = a[3] * x;
+                r[4] = a[4] * y;
+                r[5] = a[5] * y;
+                r[6] = a[6] * y;
+                r[7] = a[7] * y;
+                r[8] = a[8] * z;
+                r[9] = a[9] * z;
+                r[10] = a[10] * z;
+                r[11] = a[11] * z;
+                r[12] = a[12];
+                r[13] = a[13];
+                r[14] = a[14];
+                r[15] = a[15];
+            }
+            return r;
+        },
+
+        rotate : function(r, a, angle, x, y, z) {
+            if ('undefined' === typeof y) {
+                z = x[2];
+                y = x[1];
+                x = x[0];
+            }
+            
+            var len = x*x + y*y + z*z;
+            
+            if (len < 1e-12) { // 1e-6 == epsilon, 1e-12 == epsilon^2
+                // TODO: is this an exception in glRotate?
+                return r;
+            }
+            
+            len = 1.0 / Math.sqrt(len);
+            x *= len;
+            y *= len;
+            z *= len;
+            
+            var s = Math.sin(angle),
+                c = Math.cos(angle),
+                t = 1 - c,
+            
+                xt = x * t,
+                yt = y * t,
+                zt = z * t,
+
+                xs = x * s,
+                ys = y * s,
+                zs = z * s,
+
+                b00 = x * xt + c,
+                b01 = y * xt + zs,
+                b02 = z * xt - ys,
+
+                b10 = x * yt - zs,
+                b11 = y * yt + c,
+                b12 = z * yt + xs,
+
+                b20 = x * zt + ys,
+                b21 = y * zt - xs,
+                b22 = z * zt + c,
+            
+                t0 = a[ 0], t1 = a[ 4], t2 = a[ 8];
+
+            r[ 0] = t0 * b00 + t1 * b01 + t2 * b02;
+            r[ 4] = t0 * b10 + t1 * b11 + t2 * b12;
+            r[ 8] = t0 * b20 + t1 * b21 + t2 * b22;
+            
+            t0 = a[ 1]; t1 = a[ 5]; t2 = a[ 9];
+            r[ 1] = t0 * b00 + t1 * b01 + t2 * b02;
+            r[ 5] = t0 * b10 + t1 * b11 + t2 * b12;
+            r[ 9] = t0 * b20 + t1 * b21 + t2 * b22;
+            
+            t0 = a[ 2]; t1 = a[ 6]; t2 = a[10];
+            r[ 2] = t0 * b00 + t1 * b01 + t2 * b02;
+            r[ 6] = t0 * b10 + t1 * b11 + t2 * b12;
+            r[10] = t0 * b20 + t1 * b21 + t2 * b22;
+            
+            t0 = a[ 3]; t1 = a[ 7]; t2 = a[11];
+            r[ 3] = t0 * b00 + t1 * b01 + t2 * b02;
+            r[ 7] = t0 * b10 + t1 * b11 + t2 * b12;
+            r[11] = t0 * b20 + t1 * b21 + t2 * b22;
+            
+            if (a !== r) {
+                r[12] = a[12];
+                r[13] = a[13];
+                r[14] = a[14];
+                r[15] = a[15];
+            }
+            
+            return r;
+        },
+
+        rotateX : function(r, a, angle) {
+            var s = Math.sin(angle),
+                c = Math.cos(angle);
+            
+            var i = a[4], j = a[8];
+            r[ 4] = i * c + j * s;
+            r[ 8] = j * c - i * s;
+            
+            i = a[5]; j = a[9];
+            r[ 5] = i * c + j * s;
+            r[ 9] = j * c - i * s;
+            
+            i = a[6]; j = a[10];
+            r[ 6] = i * c + j * s;
+            r[10] = j * c - i * s;
+            
+            i = a[7]; j = a[11];
+            r[ 7] = i * c + j * s;
+            r[11] = j * c - i * s;
+            
+            if (a !== r) {
+                r[ 0] = a[ 0];
+                r[ 1] = a[ 1];
+                r[ 2] = a[ 2];
+                r[ 3] = a[ 3];
+                r[12] = a[12];
+                r[13] = a[13];
+                r[14] = a[14];
+                r[15] = a[15];
+            }
+            
+            return r;
+        },
+        
+        rotateY : function(r, a, angle) {            
+            var s = Math.sin(angle),
+                c = Math.cos(angle);
+            
+            var i = a[0], j = a[8];
+            r[ 0] = i * c - j * s;
+            r[ 8] = i * s + j * c;
+            
+            i = a[1]; j = a[9];
+            r[ 1] = i * c - j * s;
+            r[ 9] = i * s + j * c;
+            
+            i = a[2]; j = a[10];
+            r[ 2] = i * c - j * s;
+            r[10] = i * s + j * c;
+            
+            i = a[3]; j = a[11];
+            r[ 3] = i * c - j * s;
+            r[11] = i * s + j * c;
+            
+            if (a !== r) {
+                r[ 4] = a[ 4];
+                r[ 5] = a[ 5];
+                r[ 6] = a[ 6];
+                r[ 7] = a[ 7];
+                r[12] = a[12];
+                r[13] = a[13];
+                r[14] = a[14];
+                r[15] = a[15];
+            }
+            
+            return r;
+        },
+        
+        rotateZ : function(r, a, angle) {            
+            var s = Math.sin(angle),
+                c = Math.cos(angle);
+            
+            var i = a[0], j = a[4];
+            r[0] = i * c + j * s;
+            r[4] = j * c - i * s;
+            
+            i = a[1]; j = a[5];
+            r[1] = i * c + j * s;
+            r[5] = j * c - i * s;
+            
+            i = a[2]; j = a[6];
+            r[2] = i * c + j * s;
+            r[6] = j * c - i * s;
+            
+            i = a[3]; j = a[7];
+            r[3] = i * c + j * s;
+            r[7] = j * c - i * s;
+            
+            if (a !== r) {
+                r[ 8] = a[ 8];
+                r[ 9] = a[ 9];
+                r[10] = a[10];
+                r[11] = a[11];
+                r[12] = a[12];
+                r[13] = a[13];
+                r[14] = a[14];
+                r[15] = a[15];
+            }
+            
+            return r;
+        },
+
+        invert : function(r, a) {
+            var a00 = a[0], a01 = a[1], a02 = a[2], a03 = a[3],
+                a10 = a[4], a11 = a[5], a12 = a[6], a13 = a[7],
+                a20 = a[8], a21 = a[9], a22 = a[10], a23 = a[11],
+                a30 = a[12], a31 = a[13], a32 = a[14], a33 = a[15],
+
+                b00 = a00 * a11 - a01 * a10,
+                b01 = a00 * a12 - a02 * a10,
+                b02 = a00 * a13 - a03 * a10,
+                b03 = a01 * a12 - a02 * a11,
+                b04 = a01 * a13 - a03 * a11,
+                b05 = a02 * a13 - a03 * a12,
+                b06 = a20 * a31 - a21 * a30,
+                b07 = a20 * a32 - a22 * a30,
+                b08 = a20 * a33 - a23 * a30,
+                b09 = a21 * a32 - a22 * a31,
+                b10 = a21 * a33 - a23 * a31,
+                b11 = a22 * a33 - a23 * a32,
+
+                // Calculate the determinant
+                det = b00 * b11 - b01 * b10 + b02 * b09 + b03 * b08 - b04 * b07 + b05 * b06;
+
+            if (det) {
+                det = 1.0 / det;
+
+                r[ 0] = (a11 * b11 - a12 * b10 + a13 * b09) * det;
+                r[ 1] = (a02 * b10 - a01 * b11 - a03 * b09) * det;
+                r[ 2] = (a31 * b05 - a32 * b04 + a33 * b03) * det;
+                r[ 3] = (a22 * b04 - a21 * b05 - a23 * b03) * det;
+                r[ 4] = (a12 * b08 - a10 * b11 - a13 * b07) * det;
+                r[ 5] = (a00 * b11 - a02 * b08 + a03 * b07) * det;
+                r[ 6] = (a32 * b02 - a30 * b05 - a33 * b01) * det;
+                r[ 7] = (a20 * b05 - a22 * b02 + a23 * b01) * det;
+                r[ 8] = (a10 * b10 - a11 * b08 + a13 * b06) * det;
+                r[ 9] = (a01 * b08 - a00 * b10 - a03 * b06) * det;
+                r[10] = (a30 * b04 - a31 * b02 + a33 * b00) * det;
+                r[11] = (a21 * b02 - a20 * b04 - a23 * b00) * det;
+                r[12] = (a11 * b07 - a10 * b09 - a12 * b06) * det;
+                r[13] = (a00 * b09 - a01 * b07 + a02 * b06) * det;
+                r[14] = (a31 * b01 - a30 * b03 - a32 * b00) * det;
+                r[15] = (a20 * b03 - a21 * b01 + a22 * b00) * det;
+            }
+        },
+        
+        perspective : function(r, fovy, aspect, near, far) {
+            var f = 1 / Math.atan2(fovy, 2),
+                n = 1 / (near - far);
+                        
+            r[0] = f / aspect;
+            r[5] = f;
+            r[10] = (far + near) * n;
+            r[11] = -1;
+            r[14] = 2 * far * near * n;
+            
+            r[1] = r[2] = r[3] = r[4] =
+                r[6] = r[7] = r[8] = r[9] = 
+                r[12] = r[13] = r[15] = 0;
+
+            return r;
+        },
+
+        lookAt : function(r, eye, center, up) {
+            var e0 = eye[0],
+                e1 = eye[1],
+                e2 = eye[2],
+
+                z0 = e0 - center[0],
+                z1 = e1 - center[1],
+                z2 = e2 - center[2],
+                len = Math.sqrt(z0*z0 + z1*z1 + z2*z2);
+
+            if (len < 1e-12) {
+                // throw exception?
+                return identity(r);
+            }
+
+            z0 /= len;
+            z1 /= len;
+            z2 /= len;
+
+            var x0 = up[1] * z2 - up[2] * z1,
+                x1 = up[2] * z0 - up[0] * z2,
+                x2 = up[0] * z1 - up[1] * z0;
+
+            len = Math.sqrt(x0*x0 + x1*x1 + x2*x2);
+            if (len < 1e-12) {
+                x0 = x1 = x2 = 0;
+            } else {
+                x0 /= len;
+                x1 /= len;
+                x2 /= len;
+            }
+
+            var y0 = z1 * x2 - z2 * x1,
+                y1 = z2 * x0 - z0 * x2,
+                y2 = z0 * x1 - z1 * x0;
+
+            len = Math.sqrt(y0*y0 + y1*y1 + y2*y2);
+            if (len < 1e-12) {
+                y0 = y1 = y2 = 0;
+            } else {
+                y0 /= len;
+                y1 /= len;
+                y2 /= len;
+            }
+
+            r[ 0] = x0;
+            r[ 1] = y0;
+            r[ 2] = z0;
+            r[ 3] = 0;
+
+            r[ 4] = x1;
+            r[ 5] = y1;
+            r[ 6] = z1;
+            r[ 7] = 0;
+
+            r[ 8] = x2;
+            r[ 9] = y2;
+            r[10] = z2;
+            r[11] = 0;
+
+            e0 = -e0;
+
+            r[12] = x0 * e0 - x1 * e1 - x2 * e2;
+            r[13] = y0 * e0 - y1 * e1 - y2 * e2;
+            r[14] = z0 * e0 - z1 * e1 - z2 * e2;
+            r[15] = 1;
+
+            return r;
+        },
+
+    };
+});
