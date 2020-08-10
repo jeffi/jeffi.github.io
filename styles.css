@@ -82,7 +82,7 @@ h2 {
         top: 4rem;
         left: 0;
         overflow-x: hidden;
-        height: calc(100vh - 4rem);        
+        height: calc(100vh - 4rem);
     }
 }
 
@@ -130,6 +130,11 @@ h2 {
         background-size: 80px 57px !important;
     }
 
+    .iros2019 {
+        background-image: url(thumb/iros2019.svg);
+        background-size: 80px 71px !important;
+    }
+
     .wang2019adversarial {
         background-image: url(thumb/wang2019.png);
     }
@@ -165,7 +170,7 @@ h2 {
     .song2020robust {
         background-image: url(thumb/song2020robust.png);
     }
-    
+
     .schenney-tilt {
 	background-image: url(thumb/tilt-small.png);
 	background-size: 80px 74.8px !important;
@@ -208,7 +213,7 @@ h2 {
         .wang2019adversarial {
             background-image: url(thumb/wang2019@2x.png);
         }
-        
+
         .zhang2020dexnetar {
             background-image: url(thumb/zhang2020@2x.png);
         }
@@ -216,7 +221,7 @@ h2 {
         .xu2020minimal {
             background-image: url(thumb/xu2020@2x.png);
         }
-        
+
         .ichnowski2020fog {
             background-image: url(thumb/ichnowski2020fog@2x.png);
         }
@@ -224,7 +229,7 @@ h2 {
         .ichnowski2020gomp {
             background-image: url(thumb/ichnowski2020gomp@2x.png);
         }
-        
+
         .hwang2020calibrating {
             background-image: url(thumb/hwang2020calibrating@2x.png);
         }
