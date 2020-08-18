@@ -165,6 +165,10 @@ h2 {
         background-image: url(thumb/iros2019.svg);
         background-size: 80px 71px !important;
     }
+    
+    .dissertation {
+        background-image: url(thumb/dissertation.png);
+    }
 
     .wang2019adversarial {
         background-image: url(thumb/wang2019.png);
@@ -240,6 +244,10 @@ h2 {
 	.isrr2017 {
 	    background-image: url(thumb/ISRR2017@2x.jpg);
 	}
+
+        .dissertation {
+            background-image: url(thumb/dissertation@2x.png);
+        }
 
         .wang2019adversarial {
             background-image: url(thumb/wang2019@2x.png);
