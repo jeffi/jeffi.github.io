@@ -32,22 +32,39 @@ span.pdf {
 }
 
 .site-header {
-    background-color: rgba(0, 50, 100, 0.85);
+    /* background-color: rgba(0, 50, 100, 0.85); */
+    /* background-color: rgba(56, 68, 168, 1.0); */
+    background-color: rgba(21, 35, 153, 0.85);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
 }
+/*
+
+ x * .85 + 255 * .15 = 56 
+ x * .85  = 56 - 255 * .15
+ x = (56 - 255 * .15) / .85
+ x = 56 / .85 - 45
+
+ x = 56 / .75 - 85 = -10 , 6 , 139
+     
+*/
 
 .site-header a {
-    color: #bbb;
+    /* color: #bbb; */
+    color: #fff;
     transition: ease-in-out color .15s;
+    border-bottom: 2px solid rgba(0,0,0,0);
+    margin: .4rem 1rem;
+    padding: .1rem 0rem;
 }
 
 .site-header a.active {
     color: #fff;
+    border-bottom: 2px solid #fff;
 }
 
 .site-header a:hover {
-    color: #fff;
+    color: #cdf;
     text-decoration: none;
 }
 
