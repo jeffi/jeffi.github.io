@@ -223,6 +223,10 @@ h2 {
         background-image: url(thumb/song2020robust.png);
     }
 
+    .hwangseita2020applying {
+        background-image: url(thumb/hwangseita2020applying.png);
+    }
+
     .schenney-tilt {
 	background-image: url(thumb/tilt-small.png);
 	background-size: 80px 74.8px !important;
@@ -288,6 +292,10 @@ h2 {
 
         .hwang2020calibrating {
             background-image: url(thumb/hwang2020calibrating@2x.png);
+        }
+
+        .hwangseita2020applying {
+            background-image: url(thumb/hwangseita2020applying@2x.png);
         }
 
         .seita2020deep {
