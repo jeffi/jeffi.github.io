@@ -82,6 +82,11 @@ h2 {
     padding-top: 60px;
 }
 
+h3 {
+    font-size: 1.5rem;
+    background-color: #eee;
+}
+
 .pubs, .patents {
     padding-left: 0;
     list-style: none;
