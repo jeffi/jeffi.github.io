@@ -127,6 +127,9 @@ h2 {
     color: #428bca;
 }
 
+.award {
+    font-weight: 500;
+}
 
 @media (min-width: 768px) {
     .bd-sidebar {
