@@ -149,6 +149,14 @@ h2 {
 	background-size: 80px 80px;
     }
 
+    .zhang2021lostarc {
+        background-image: url(thumb/zhang2021lostarc.png);
+    }
+
+    .paradis2021ivs {
+        background-image: url(thumb/paradis2021ivs.png);
+    }
+
     .GrannenSundaresan2020HULK {
         background-image: url(thumb/GrannenSundaresan2020HULK.png);
     }
@@ -250,6 +258,14 @@ h2 {
            only screen and (-o-min-device-pixel-ratio: 2/1),
            only screen and (-webkit-min-device-pixel-ratio: 2),
            only screen and (min-device-pixel-ratio: 2) {
+
+        .zhang2021lostarc {
+            background-image: url(thumb/zhang2021lostarc@2x.png);
+        }
+
+        .paradis2021ivs {
+            background-image: url(thumb/paradis2021ivs@2x.png);
+        }
 
         .GrannenSundaresan2020HULK {
             background-image: url(thumb/GrannenSundaresan2020HULK@2x.png);
