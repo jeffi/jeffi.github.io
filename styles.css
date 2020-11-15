@@ -85,6 +85,8 @@ h2 {
 h3 {
     font-size: 1.5rem;
     background-color: #eee;
+    padding-left: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 .pubs, .patents {
