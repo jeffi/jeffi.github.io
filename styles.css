@@ -28,7 +28,7 @@ span.pdf {
 }
 
 .container {
-    max-width: 960px;
+    max-width: 1024px; /* 960px; */
 }
 
 .site-header {
@@ -94,6 +94,7 @@ h2 {
 
 .pubs .title {
     font-weight: bold;
+    display: block;
 }
 
 .conference, .journal {
@@ -112,6 +113,10 @@ h2 {
 
 .pubs .links a + a {
     margin-left: 1em;
+}
+
+.pubs .author {
+    display: block;
 }
 
 .author a {
@@ -142,6 +147,10 @@ h2 {
 	background-repeat: no-repeat;
 	background-position: 0px 50%;
 	background-size: 80px 80px;
+    }
+
+    .GrannenSundaresan2020HULK {
+        background-image: url(thumb/GrannenSundaresan2020HULK.png);
     }
 
     .tro2013 {
@@ -241,6 +250,10 @@ h2 {
            only screen and (-o-min-device-pixel-ratio: 2/1),
            only screen and (-webkit-min-device-pixel-ratio: 2),
            only screen and (min-device-pixel-ratio: 2) {
+
+        .GrannenSundaresan2020HULK {
+            background-image: url(thumb/GrannenSundaresan2020HULK@2x.png);
+        }
 
         .tro2013 {
 	    background-image: url(thumb/TRO2013@2x.png);
