@@ -159,6 +159,11 @@ h3 {
 	background-size: 80px 80px;
     }
 
+    .ichnowski2020djgomp {
+        background-image: url(thumb/48.cover-source.gif); /* 122 x 155 */
+        background-size: 80px 102px;
+    }
+
     .zhang2021lostarc {
         background-image: url(thumb/zhang2021lostarc.png);
     }
@@ -269,6 +274,11 @@ h3 {
            only screen and (-webkit-min-device-pixel-ratio: 2),
            only screen and (min-device-pixel-ratio: 2) {
 
+        .ichnowski2020djgomp {
+            background-image: url(thumb/F1.medium.gif); /* 346 x 440 */
+            background-size: 80px 102px;
+        }
+        
         .zhang2021lostarc {
             background-image: url(thumb/zhang2021lostarc@2x.png);
         }
