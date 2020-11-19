@@ -127,6 +127,8 @@ span.press {
     margin-right: 1em;
 }
 
+.links a, .press a { white-space: nowrap; }
+
 .pubs .press a + a {
     margin-left: 1em;
 }
