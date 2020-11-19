@@ -122,6 +122,15 @@ h3 {
     margin-left: 1em;
 }
 
+span.press {
+    font-weight: 500;
+    margin-right: 1em;
+}
+
+.pubs .press a + a {
+    margin-left: 1em;
+}
+
 .pubs .author {
     display: block;
 }
