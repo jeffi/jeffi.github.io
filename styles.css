@@ -175,6 +175,15 @@ span.press {
         background-size: 80px 102px;
     }
 
+    .HuangDominguezKuhne2020laxray {
+        background-image: url(thumb/laxray.png);
+    }
+
+    .kurenkov2020hms {
+        background-image: url(thumb/kurenkov2020hms.png);
+        background-size: 80px 66px;
+    }
+
     .zhang2021lostarc {
         background-image: url(thumb/zhang2021lostarc.png);
     }
@@ -288,6 +297,15 @@ span.press {
         .ichnowski2020djgomp {
             background-image: url(thumb/F1.medium.gif); /* 346 x 440 */
             background-size: 80px 102px;
+        }
+
+        .HuangDominguezKuhne2020laxray {
+            background-image: url(thumb/laxray@2x.png);
+        }
+
+        .kurenkov2020hms {
+            background-image: url(thumb/kurenkov2020hms@2x.png);
+            background-size: 80px 66px;
         }
         
         .zhang2021lostarc {
