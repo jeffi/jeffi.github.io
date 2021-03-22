@@ -188,6 +188,10 @@ span.press {
         background-image: url(thumb/zhang2021lostarc.png);
     }
 
+    .anand2021 {
+        background-image: url(thumb/anand2021.png);
+    }
+
     .paradis2021ivs {
         background-image: url(thumb/paradis2021ivs.png);
     }
@@ -310,6 +314,10 @@ span.press {
         
         .zhang2021lostarc {
             background-image: url(thumb/zhang2021lostarc@2x.png);
+        }
+
+        .anand2021 {
+            background-image: url(thumb/anand2021@2x.png);
         }
 
         .paradis2021ivs {
