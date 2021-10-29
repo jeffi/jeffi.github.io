@@ -178,6 +178,10 @@ span.press {
 	background-size: 80px 80px;
     }
 
+    .ichnowski2021gompfit {
+        background-image: url(thumb/gomp_fit_wine_end@1x.jpg);
+    }
+
     .IchnowskiAvigal2021dexnerf {
         background-image: url(thumb/IchnowskiAvigal2021dexnerf@1x.png);
     }
@@ -334,6 +338,10 @@ span.press {
            only screen and (-o-min-device-pixel-ratio: 2/1),
            only screen and (-webkit-min-device-pixel-ratio: 2),
            only screen and (min-device-pixel-ratio: 2) {
+
+        .ichnowski2021gompfit {
+            background-image: url(thumb/gomp_fit_wine_end@2x.jpg);
+        }
 
         .IchnowskiAvigal2021dexnerf {
             background-image: url(thumb/IchnowskiAvigal2021dexnerf@2x.png);
