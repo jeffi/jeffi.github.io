@@ -182,6 +182,10 @@ span.press {
         background-image: url(thumb/AvigalIchnowski2022gompst.png);
     }
 
+    .lim2022oed {
+        background-image: url(thumb/lim2022oed.png);
+    }
+
     .ichnowski2021gompfit {
         background-image: url(thumb/gomp_fit_wine_end@1x.jpg);
     }
@@ -362,6 +366,10 @@ span.press {
 
         .AvigalIchnowski2022gompst {
             background-image: url(thumb/AvigalIchnowski2022gompst@2x.png);
+        }
+        
+        .lim2022oed {
+            background-image: url(thumb/lim2022oed@2x.png);
         }
         
         .ichnowski2021gompfit {
