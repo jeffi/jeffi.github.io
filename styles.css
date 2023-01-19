@@ -81,7 +81,7 @@ span.pdf {
 }
 
 .contact .name { font-weight: 600; }
-.contact .position { font-size: 10pt; }
+.contact .position { }
 .contact .instution { }
 .contact .email { }
 
@@ -176,6 +176,50 @@ span.press {
 	background-repeat: no-repeat;
 	background-position: 0px 16px;
 	background-size: 80px 80px;
+    }
+
+    .ichnowski2023fogros2 {
+        background-image: url(thumb/ichnowski2023fogros2@1x.png);
+    }
+
+    .shivakumar2023sgtm2 {
+        background-image: url(thumb/shivakumar2023sgtm2@1x.png);
+    }
+
+    .kerr2022evonerf {
+        background-image: url(thumb/kerr2022evonerf@1x.png);
+    }
+
+    .agboh2022mog {
+        background-image: url(thumb/agboh2022mog@1x.png);
+    }
+
+    .huang2022stacking {
+        background-image: url(thumb/huang2022stacking@1x.png);
+    }
+
+    .chen2022fling {
+        background-image: url(thumb/chen2022fling@1x.png);
+    }
+
+    .chen2022fogrosg {
+        background-image: url(thumb/chen2022fogrosg@1x.png);
+    }
+
+    .hwang2022pegtransfer {
+        background-image: url(thumb/hwang2022pegtransfer@1x.png);
+    }
+
+    .bonne2022digitaltwin {
+        background-image: url(thumb/bonne2022digitaltwin@1x.png);
+    }
+
+    .chen2022osa {
+        background-image: url(thumb/chen2022osa@1x.png);
+    }
+
+    .shivakumar2022autonomously {
+        background-image: url(thumb/shivakumar2022autonomously@1x.png);
     }
 
     .AvigalIchnowski2022gompst {
@@ -364,6 +408,50 @@ span.press {
            only screen and (-webkit-min-device-pixel-ratio: 2),
            only screen and (min-device-pixel-ratio: 2) {
 
+        .ichnowski2023fogros2 {
+            background-image: url(thumb/ichnowski2023fogros2@2x.png);
+        }
+
+        .shivakumar2023sgtm2 {
+            background-image: url(thumb/shivakumar2023sgtm2@2x.png);
+        }
+        
+        .kerr2022evonerf {
+            background-image: url(thumb/kerr2022evonerf@2x.png);
+        }
+
+        .agboh2022mog {
+            background-image: url(thumb/agboh2022mog@2x.png);
+        }
+
+        .huang2022stacking {
+            background-image: url(thumb/huang2022stacking@2x.png);
+        }
+        
+        .chen2022fling {
+            background-image: url(thumb/chen2022fling@2x.png);
+        }
+
+        .chen2022fogrosg {
+            background-image: url(thumb/chen2022fogrosg@2x.png);
+        }
+
+        .hwang2022pegtransfer {
+            background-image: url(thumb/hwang2022pegtransfer@2x.png);
+        }
+
+        .bonne2022digitaltwin {
+            background-image: url(thumb/bonne2022digitaltwin@2x.png);
+        }
+
+        .chen2022osa {
+            background-image: url(thumb/chen2022osa@2x.png);
+        }
+
+        .shivakumar2022autonomously {
+            background-image: url(thumb/shivakumar2022autonomously@2x.png);
+        }
+        
         .AvigalIchnowski2022gompst {
             background-image: url(thumb/AvigalIchnowski2022gompst@2x.png);
         }
